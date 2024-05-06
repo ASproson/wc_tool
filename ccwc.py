@@ -13,11 +13,23 @@ def count_words(filename):
       word_count += len(words)
   return word_count
 
+def count_chars(filename):
+  with open(filename, 'rb') as file:
+    data = file.read()
+    try:
+      decoded_data = data.decode('utf-8')
+      char_count = len(decoded_data)
+    except UnicodeDecodeError:
+      char_count = len(data)
+    return char_count
+
 def main():
   parser = argparse.ArgumentParser(prog="ccwc.py", description="Unix word counter", usage="[program] [file] [options]")
   parser.add_argument('filename', help="Input file")
-  parser.add_argument("-l", "--lines", action='store_true', help="Count lines in the specified file")
-  parser.add_argument("-w", "--words", action='store_true', help="Count words in the specified file")
+  parser.add_argument("-l", "--lines", action='store_true', help="Count the number of lines in the specified file")
+  parser.add_argument("-w", "--words", action='store_true', help="Count the number of words in the specified file")
+  parser.add_argument("-m", "--characters", action='store_true', help="Count the number of characters in the specified file")
+
 
   args = parser.parse_args()
   file = args.filename
@@ -29,6 +41,10 @@ def main():
   if args.words:
     word_count = count_words(file)
     print(f"Number of words in {file}: {word_count}")
+
+  if args.characters:
+    char_count = count_chars(file)
+    print(f"Number of characters in {file}: {char_count}")
 
 if __name__ == "__main__":
   main()
