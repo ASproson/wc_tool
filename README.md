@@ -31,3 +31,7 @@ When in the repo directory you can run the following commands on the test file:
 Alternatively you can pipe in a specific file to the script itself and make use of the same commands above:
 
 > `cat test.txt | python ccwc.py`
+
+## Demo
+
+![Animation](https://github.com/ASproson/wc_tool/assets/77736272/5a0d49e6-4d93-4bc3-a139-f8b8f53c7424)
