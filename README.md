@@ -11,13 +11,21 @@ Please clone the repo below:
 When in the repo directory you can run the following commands on the test file:
 
 > `python ccwc.py test.txt`
+
 > `python ccwc.py test.txt -h`
+
 > `python ccwc.py test.txt --help`
+
 > `python ccwc.py test.txt -w`
+
 > `python ccwc.py test.txt --words`
+
 > `python ccwc.py test.txt -l`
+
 > `python ccwc.py test.txt --lines`
+
 > `python ccwc.py test.txt -m`
+
 > `python ccwc.py test.txt --characters`
 
 Alternatively you can pipe in a specific file to the script itself and make use of the same commands above:
