@@ -1,17 +1,6 @@
 import argparse
 import sys
-
-def count_lines(lines):
-    line_count = sum(1 for _ in lines)
-    return line_count
-
-def count_words(lines):
-    word_count = sum(len(line.split()) for line in lines)
-    return word_count
-
-def count_chars(lines):
-    char_count = sum(len(line) for line in lines)
-    return char_count
+from utils import count_lines, count_words, count_chars
 
 def main():
     parser = argparse.ArgumentParser(prog="ccwc.py", description="Unix word counter", usage="[program] [file] [options]")
@@ -34,7 +23,8 @@ def main():
         line_count = count_lines(lines)
         word_count = count_words(lines)
         char_count = count_chars(lines)
-        print(f"{line_count} {word_count} {char_count}")
+        filename_str = f" {args.filename}" if args.filename else ""
+        print(f"{line_count} {word_count} {char_count} {filename_str}")
     else:
         if args.lines:
             line_count = count_lines(lines)
