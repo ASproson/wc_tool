@@ -40,8 +40,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# cat test.txt | python ccwc.py -l
-# python ccwc.py test.txt
-# python ccwc.py test.txt -w
