@@ -30,9 +30,14 @@ def main():
   parser.add_argument("-w", "--words", action='store_true', help="Count the number of words in the specified file")
   parser.add_argument("-m", "--characters", action='store_true', help="Count the number of characters in the specified file")
 
-
   args = parser.parse_args()
   file = args.filename
+
+  if not(args.lines or args.words or args.characters):
+    line_count = count_lines(file)
+    word_count = count_words(file)
+    char_count = count_chars(file)
+    print(f"{line_count} {word_count} {char_count} {file}")
 
   if args.lines:
     line_count = count_lines(file)
@@ -45,6 +50,8 @@ def main():
   if args.characters:
     char_count = count_chars(file)
     print(f"Number of characters in {file}: {char_count}")
+
+
 
 if __name__ == "__main__":
   main()
