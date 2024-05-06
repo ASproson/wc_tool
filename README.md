@@ -6,7 +6,7 @@ Implementation of the unix `wc` functionality using Python. `wc` in unix allows 
 
 Please clone the repo below:
 
-`git clone `
+`git clone https://github.com/ASproson/wc_tool.git`
 
 When in the repo directory you can run the following commands on the test file:
 
